@@ -49,7 +49,7 @@ spec:
       - env:
         - name: JAVA_TOOL_OPTIONS
           value: -Dmanagement.endpoint.health.probes.add-additional-paths="true" -Dmanagement.endpoint.health.show-details=always -Dmanagement.endpoints.web.base-path="/actuator" -Dmanagement.endpoints.web.exposure.include=* -Dmanagement.health.probes.enabled="true" -Dmanagement.server.port="8081" -Dserver.port="8080" -Dserver.shutdown.grace-period="24s"
-        image: harbor.one.appref.end2end.link/tap/sc/hello-canary@sha256:88e8883fa0ae860aa08228c4ddd2dc04463ef07179b2241d2c0fb1b29087adf0
+        image: harbor.one.appref.end2end.link/tap/sc/hello-canary@sha256:802d58c2591091c5f68b611198e3da42207297bed0efc06be0b85877e774f0c0
         livenessProbe:
           httpGet:
             path: /livez
