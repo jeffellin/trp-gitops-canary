@@ -8,7 +8,7 @@ metadata:
   labels:
     app.kubernetes.io/part-of: hello
     apps.tanzu.vmware.com/workload-type: web
-    kapp.k14s.io/app: "1663010917702278916"
+    kapp.k14s.io/app: "1663878042706057373"
     kapp.k14s.io/association: v1.e0c1c09d6d780ef670050e3574ddfb4e
     app.kubernetes.io/component: run
     carto.run/workload-name: hello-jar
@@ -30,7 +30,7 @@ spec:
           appliveview-sample/app-live-view-systemproperties
         developer.conventions/target-containers: workload
         kapp.k14s.io/identity: v1;canary/carto.run/Workload/hello-jar;carto.run/v1alpha1
-        kapp.k14s.io/original: '{"apiVersion":"carto.run/v1alpha1","kind":"Workload","metadata":{"labels":{"app.kubernetes.io/part-of":"hello","apps.tanzu.vmware.com/workload-type":"web","kapp.k14s.io/app":"1663010917702278916","kapp.k14s.io/association":"v1.e0c1c09d6d780ef670050e3574ddfb4e"},"name":"hello-jar","namespace":"canary"},"spec":{"params":[{"name":"gitops_repository_name","value":"trp-gitops-canary"},{"name":"annotations","value":{"autoscaling.knative.dev/minScale":"1"}}],"source":{"image":"harbor.one.appref.end2end.link/tap/sc/java-jar@sha256:2699e2271c4125c519385cb7d60e612801040d3170d24a7c2ea6fc73a46a0bbc"}}}'
+        kapp.k14s.io/original: '{"apiVersion":"carto.run/v1alpha1","kind":"Workload","metadata":{"labels":{"app.kubernetes.io/part-of":"hello","apps.tanzu.vmware.com/workload-type":"web","kapp.k14s.io/app":"1663878042706057373","kapp.k14s.io/association":"v1.e0c1c09d6d780ef670050e3574ddfb4e"},"name":"hello-jar","namespace":"canary"},"spec":{"params":[{"name":"gitops_repository_name","value":"trp-gitops-canary"},{"name":"annotations","value":{"autoscaling.knative.dev/minScale":"1"}}],"source":{"image":"harbor.h2o-4-1396.h2o.vmware.com/tap/sc/java-jar@sha256:2d018a2f38d88ea8168e90cf4143432ab5c9f418eca775402a62c8c800b1e8dc"}}}'
         kapp.k14s.io/original-diff-md5: c6e94dc94aed3401b5d0f26ed6c0bff3
       labels:
         app.kubernetes.io/component: run
@@ -38,7 +38,7 @@ spec:
         apps.tanzu.vmware.com/workload-type: web
         carto.run/workload-name: hello-jar
         conventions.apps.tanzu.vmware.com/framework: spring-boot
-        kapp.k14s.io/app: "1663010917702278916"
+        kapp.k14s.io/app: "1663878042706057373"
         kapp.k14s.io/association: v1.e0c1c09d6d780ef670050e3574ddfb4e
         tanzu.app.live.view: "true"
         tanzu.app.live.view.application.actuator.port: "8081"
@@ -49,7 +49,7 @@ spec:
       - env:
         - name: JAVA_TOOL_OPTIONS
           value: -Dmanagement.endpoint.health.show-details=always -Dmanagement.endpoints.web.base-path="/actuator" -Dmanagement.endpoints.web.exposure.include=* -Dmanagement.server.port="8081" -Dserver.port="8080" -Dserver.shutdown.grace-period="24s"
-        image: harbor.one.appref.end2end.link/jeff/sc/hello-jar-canary@sha256:0c405ee8c5bf6003f92fea79ddd1154fe157f8f0fb53556fe9c0916891ca5172
+        image: harbor.h2o-4-1396.h2o.vmware.com/jeff/sc/hello-jar-canary@sha256:7cb2706b8526c539293d4bb91743daba6c1c99d6cb634770ce493087b888bf1d
         name: workload
         ports:
         - containerPort: 8080
