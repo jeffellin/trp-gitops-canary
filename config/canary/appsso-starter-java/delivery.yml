@@ -2,14 +2,11 @@ apiVersion: serving.knative.dev/v1
 kind: Service
 metadata:
   name: appsso-starter-java
-  annotations:
-    ootb.apps.tanzu.vmware.com/servicebinding-workload: "true"
-    ootb.apps.tanzu.vmware.com/apidescriptor-ref: "true"
   labels:
     app.kubernetes.io/part-of: appsso-starter-java
     apps.tanzu.vmware.com/has-tests: "true"
     apps.tanzu.vmware.com/workload-type: web
-    kapp.k14s.io/app: "1663878042706057373"
+    kapp.k14s.io/app: "1658237551119406091"
     kapp.k14s.io/association: v1.62dd05773dee8bbc22469c31a68bbe08
     app.kubernetes.io/component: run
     carto.run/workload-name: appsso-starter-java
@@ -19,14 +16,14 @@ spec:
       annotations:
         autoscaling.knative.dev/minScale: "1"
         boot.spring.io/version: 2.6.6
-        conventions.carto.run/applied-conventions: |-
+        conventions.apps.tanzu.vmware.com/applied-conventions: |-
           spring-boot-convention/spring-boot
           spring-boot-convention/spring-boot-graceful-shutdown
           spring-boot-convention/spring-boot-web
           appliveview-sample/app-live-view-appflavour-check
         developer.conventions/target-containers: workload
         kapp.k14s.io/identity: v1;canary/carto.run/Workload/appsso-starter-java;carto.run/v1alpha1
-        kapp.k14s.io/original: '{"apiVersion":"carto.run/v1alpha1","kind":"Workload","metadata":{"labels":{"app.kubernetes.io/part-of":"appsso-starter-java","apps.tanzu.vmware.com/has-tests":"true","apps.tanzu.vmware.com/workload-type":"web","kapp.k14s.io/app":"1663878042706057373","kapp.k14s.io/association":"v1.62dd05773dee8bbc22469c31a68bbe08"},"name":"appsso-starter-java","namespace":"canary"},"spec":{"params":[{"name":"annotations","value":{"autoscaling.knative.dev/minScale":"1"}},{"name":"gitops_repository_name","value":"trp-gitops-canary"}],"serviceClaims":[{"name":"sso-client","ref":{"apiVersion":"services.apps.tanzu.vmware.com/v1alpha1","kind":"ResourceClaim","name":"appsso-starter-java"}}],"source":{"git":{"ref":{"branch":"main"},"url":"https://github.com/tanzu-end-to-end/trp-appsso-starter-java"}}}}'
+        kapp.k14s.io/original: '{"apiVersion":"carto.run/v1alpha1","kind":"Workload","metadata":{"labels":{"app.kubernetes.io/part-of":"appsso-starter-java","apps.tanzu.vmware.com/has-tests":"true","apps.tanzu.vmware.com/workload-type":"web","kapp.k14s.io/app":"1658237551119406091","kapp.k14s.io/association":"v1.62dd05773dee8bbc22469c31a68bbe08"},"name":"appsso-starter-java","namespace":"canary"},"spec":{"params":[{"name":"annotations","value":{"autoscaling.knative.dev/minScale":"1"}},{"name":"gitops_repository_name","value":"trp-gitops-canary"}],"serviceClaims":[{"name":"sso-client","ref":{"apiVersion":"services.apps.tanzu.vmware.com/v1alpha1","kind":"ResourceClaim","name":"appsso-starter-java"}}],"source":{"git":{"ref":{"branch":"main"},"url":"https://github.com/tanzu-end-to-end/trp-appsso-starter-java"}}}}'
         kapp.k14s.io/original-diff-md5: c6e94dc94aed3401b5d0f26ed6c0bff3
       labels:
         app.kubernetes.io/component: run
@@ -35,14 +32,14 @@ spec:
         apps.tanzu.vmware.com/workload-type: web
         carto.run/workload-name: appsso-starter-java
         conventions.apps.tanzu.vmware.com/framework: spring-boot
-        kapp.k14s.io/app: "1663878042706057373"
+        kapp.k14s.io/app: "1658237551119406091"
         kapp.k14s.io/association: v1.62dd05773dee8bbc22469c31a68bbe08
     spec:
       containers:
       - env:
         - name: JAVA_TOOL_OPTIONS
           value: -Dserver.port="8080" -Dserver.shutdown.grace-period="24s"
-        image: harbor.h2o-4-1396.h2o.vmware.com/tap/sc/appsso-starter-java-canary@sha256:6246cf7717ab2df1f485ce7edf76a147b6ff22bbdc5c57dc4355fad7d5a53410
+        image: harbor.one.appref.end2end.link/tap/sc/appsso-starter-java-canary@sha256:648c1bc2d5ec00b11e5779424795aa1ac7d22b98334189228c02305fa455fa14
         name: workload
         ports:
         - containerPort: 8080
