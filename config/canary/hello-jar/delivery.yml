@@ -49,7 +49,7 @@ spec:
       - env:
         - name: JAVA_TOOL_OPTIONS
           value: -Dmanagement.endpoint.health.show-details=always -Dmanagement.endpoints.web.base-path="/actuator" -Dmanagement.endpoints.web.exposure.include=* -Dmanagement.server.port="8081" -Dserver.port="8080" -Dserver.shutdown.grace-period="24s"
-        image: harbor.h2o-4-1396.h2o.vmware.com/jeff/sc/hello-jar-canary@sha256:5713ed7882d8d0a24de12caf2dce7645e083332c48693e2dc9b7b61eee75d440
+        image: harbor.h2o-4-1396.h2o.vmware.com/jeff/sc/hello-jar-canary@sha256:9a5cf9abd9e883c6c712a519ecb9db215cdcbe10a0c633030e0ce3e4df7a22e8
         name: workload
         ports:
         - containerPort: 8080
