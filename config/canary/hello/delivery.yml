@@ -52,7 +52,7 @@ spec:
       - env:
         - name: JAVA_TOOL_OPTIONS
           value: -Dmanagement.endpoint.health.probes.add-additional-paths="true" -Dmanagement.endpoint.health.show-details=always -Dmanagement.endpoints.web.base-path="/actuator" -Dmanagement.endpoints.web.exposure.include=* -Dmanagement.health.probes.enabled="true" -Dmanagement.server.port="8081" -Dserver.port="8080" -Dserver.shutdown.grace-period="24s"
-        image: registry.gcp.ellin.net/tap/sc/hello-canary@sha256:0216a41851f2dcd0b9e3ee1b535531ca51f3c87d1e9d99c2f926eb6688a7fadd
+        image: registry.gcp.ellin.net/tap/sc/hello-canary@sha256:1117fcb145661b83f4e6cd98fba548aaa931e0269e17eeefae7b64c67c56e47f
         livenessProbe:
           httpGet:
             path: /livez
