@@ -31,7 +31,7 @@ spec:
           appliveview-sample/app-live-view-appflavour-check
         developer.conventions/target-containers: workload
         kubectl.kubernetes.io/last-applied-configuration: |
-          {"apiVersion":"carto.run/v1alpha1","kind":"Workload","metadata":{"annotations":{},"labels":{"app.kubernetes.io/part-of":"tanzu-java-web-app","apps.tanzu.vmware.com/auto-configure-actuators":"true","apps.tanzu.vmware.com/workload-type":"web"},"name":"foo-bar","namespace":"canary"},"spec":{"params":[{"name":"annotations","value":{"autoscaling.knative.dev/minScale":"1"}}],"source":{"git":{"ref":{"branch":"main"},"url":"https://github.com/jeffellin/foo"}}}}
+          {"apiVersion":"carto.run/v1alpha1","kind":"Workload","metadata":{"annotations":{},"labels":{"app.kubernetes.io/part-of":"tanzu-java-web-app","apps.tanzu.vmware.com/auto-configure-actuators":"true","apps.tanzu.vmware.com/workload-type":"web"},"name":"foo-bar","namespace":"canary"},"spec":{"params":[{"name":"gitops_repository_name","value":"trp-gitops-canary"},{"name":"annotations","value":{"autoscaling.knative.dev/minScale":"1"}}],"source":{"git":{"ref":{"branch":"main"},"url":"https://github.com/jeffellin/foo"}}}}
       labels:
         app.kubernetes.io/component: run
         app.kubernetes.io/part-of: tanzu-java-web-app
