@@ -5,11 +5,12 @@ metadata:
   annotations:
     ootb.apps.tanzu.vmware.com/servicebinding-workload: "true"
     ootb.apps.tanzu.vmware.com/apidescriptor-ref: "true"
+    kapp.k14s.io/change-rule: upsert after upserting servicebinding.io/ServiceBindings
   labels:
     app.kubernetes.io/part-of: appsso-starter-java
     apps.tanzu.vmware.com/has-tests: "true"
     apps.tanzu.vmware.com/workload-type: web
-    kapp.k14s.io/app: "1672857995445286987"
+    kapp.k14s.io/app: "1680803861227691168"
     kapp.k14s.io/association: v1.62dd05773dee8bbc22469c31a68bbe08
     app.kubernetes.io/component: run
     carto.run/workload-name: appsso-starter-java
@@ -18,17 +19,17 @@ spec:
     metadata:
       annotations:
         autoscaling.knative.dev/minScale: "1"
-        boot.spring.io/version: 2.6.6
+        boot.spring.io/version: 3.0.5
         conventions.carto.run/applied-conventions: |-
+          appliveview-sample/app-live-view-appflavour-check
           spring-boot-convention/auto-configure-actuators-check
           spring-boot-convention/spring-boot
           spring-boot-convention/spring-boot-graceful-shutdown
           spring-boot-convention/spring-boot-web
           spring-boot-convention/app-live-view-appflavour-check
-          appliveview-sample/app-live-view-appflavour-check
         developer.conventions/target-containers: workload
         kapp.k14s.io/identity: v1;canary/carto.run/Workload/appsso-starter-java;carto.run/v1alpha1
-        kapp.k14s.io/original: '{"apiVersion":"carto.run/v1alpha1","kind":"Workload","metadata":{"labels":{"app.kubernetes.io/part-of":"appsso-starter-java","apps.tanzu.vmware.com/has-tests":"true","apps.tanzu.vmware.com/workload-type":"web","kapp.k14s.io/app":"1672857995445286987","kapp.k14s.io/association":"v1.62dd05773dee8bbc22469c31a68bbe08"},"name":"appsso-starter-java","namespace":"canary"},"spec":{"params":[{"name":"annotations","value":{"autoscaling.knative.dev/minScale":"1"}},{"name":"gitops_repository_name","value":"trp-gitops-canary"}],"serviceClaims":[{"name":"sso-client","ref":{"apiVersion":"services.apps.tanzu.vmware.com/v1alpha1","kind":"ResourceClaim","name":"appsso-starter-java"}}],"source":{"git":{"ref":{"branch":"main"},"url":"https://github.com/tanzu-end-to-end/trp-appsso-starter-java"}}}}'
+        kapp.k14s.io/original: '{"apiVersion":"carto.run/v1alpha1","kind":"Workload","metadata":{"labels":{"app.kubernetes.io/part-of":"appsso-starter-java","apps.tanzu.vmware.com/has-tests":"true","apps.tanzu.vmware.com/workload-type":"web","kapp.k14s.io/app":"1680803861227691168","kapp.k14s.io/association":"v1.62dd05773dee8bbc22469c31a68bbe08"},"name":"appsso-starter-java","namespace":"canary"},"spec":{"build":{"env":[{"name":"BP_JVM_VERSION","value":"17"}]},"params":[{"name":"annotations","value":{"autoscaling.knative.dev/minScale":"1"}},{"name":"gitops_repository_name","value":"trp-gitops-canary"}],"serviceClaims":[{"name":"sso-client","ref":{"apiVersion":"services.apps.tanzu.vmware.com/v1alpha1","kind":"ResourceClaim","name":"appsso-starter-java"}}],"source":{"git":{"ref":{"branch":"main"},"url":"https://github.com/tanzu-end-to-end/trp-appsso-starter-java"}}}}'
         kapp.k14s.io/original-diff-md5: c6e94dc94aed3401b5d0f26ed6c0bff3
       labels:
         app.kubernetes.io/component: run
@@ -37,14 +38,14 @@ spec:
         apps.tanzu.vmware.com/workload-type: web
         carto.run/workload-name: appsso-starter-java
         conventions.carto.run/framework: spring-boot
-        kapp.k14s.io/app: "1672857995445286987"
+        kapp.k14s.io/app: "1680803861227691168"
         kapp.k14s.io/association: v1.62dd05773dee8bbc22469c31a68bbe08
     spec:
       containers:
       - env:
         - name: JAVA_TOOL_OPTIONS
           value: -Dserver.port="8080" -Dserver.shutdown.grace-period="24s"
-        image: registry.gcp.ellin.net/tap/sc/appsso-starter-java-canary@sha256:74b91c9c43b3031b2bf04438762146513263d8b3a98ead30138cfc80c08e7976
+        image: registry.gcp.ellin.net/tap/supply-chain/appsso-starter-java-canary@sha256:c7ebca0f79c062c877e4b68ed61cc11caab909213f94dc2e308f2a0f79874398
         name: workload
         ports:
         - containerPort: 8080
