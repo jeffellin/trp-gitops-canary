@@ -45,7 +45,7 @@ spec:
       - env:
         - name: JAVA_TOOL_OPTIONS
           value: -Dserver.port="8080" -Dserver.shutdown.grace-period="24s"
-        image: registry.gcp.ellin.net/tap/supply-chain/appsso-starter-java-canary@sha256:c7ebca0f79c062c877e4b68ed61cc11caab909213f94dc2e308f2a0f79874398
+        image: registry.gcp.ellin.net/tap/supply-chain/appsso-starter-java-canary@sha256:d8947fac2dce5ce05224759ca918544b34540a71812d5803d3c932691c63c412
         name: workload
         ports:
         - containerPort: 8080
