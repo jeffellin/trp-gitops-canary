@@ -55,7 +55,7 @@ spec:
       - env:
         - name: JAVA_TOOL_OPTIONS
           value: -Dmanagement.endpoint.health.probes.add-additional-paths="true" -Dmanagement.health.probes.enabled="true" -Dserver.port="8080" -Dserver.shutdown.grace-period="24s"
-        image: registry.gcp.ellin.net/tap/supply-chain/hello-workloads@sha256:2b12ce52940c2a8061a32823c999b08757c1d4df871f3bf811d66739ad6b6de8
+        image: registry.gcp.ellin.net/tap/supply-chain/hello-workloads@sha256:35c62304eb0f1fb9d61c0087a009135400af1db0c72816bd542bba6136137344
         livenessProbe:
           httpGet:
             path: /livez
