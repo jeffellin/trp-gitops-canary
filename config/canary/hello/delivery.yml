@@ -54,7 +54,7 @@ spec:
       - env:
         - name: JAVA_TOOL_OPTIONS
           value: -Dmanagement.endpoint.health.probes.add-additional-paths="true" -Dmanagement.health.probes.enabled="true" -Dserver.port="8080" -Dserver.shutdown.grace-period="24s"
-        image: registry.gcp.ellin.net/tap/sc/hello-canary@sha256:b690d24ca7f904e1d030c7a981b4982df46d948995f8a1d2658d211127829904
+        image: registry.gcp.ellin.net/tap/sc/hello-canary:b3.20230612.190309
         livenessProbe:
           httpGet:
             path: /livez
