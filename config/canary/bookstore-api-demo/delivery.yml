@@ -10,6 +10,8 @@ metadata:
     app.kubernetes.io/part-of: bookstore-api-demo
     apps.tanzu.vmware.com/has-tests: "true"
     apps.tanzu.vmware.com/workload-type: web
+    kapp.k14s.io/app: "1680803861227691168"
+    kapp.k14s.io/association: v1.3eaa25fbc60009f11706440283833994
     app.kubernetes.io/component: run
     carto.run/workload-name: bookstore-api-demo
 spec:
@@ -30,8 +32,9 @@ spec:
           spring-boot-convention/app-live-view-connector-boot
           spring-boot-convention/app-live-view-appflavours-boot
         developer.conventions/target-containers: workload
-        kubectl.kubernetes.io/last-applied-configuration: |
-          {"apiVersion":"carto.run/v1alpha1","kind":"Workload","metadata":{"annotations":{},"labels":{"app.kubernetes.io/part-of":"bookstore-api-demo","apps.tanzu.vmware.com/has-tests":"true","apps.tanzu.vmware.com/workload-type":"web"},"name":"bookstore-api-demo","namespace":"canary"},"spec":{"build":{"env":[{"name":"BP_JVM_VERSION","value":"17"}]},"params":[{"name":"annotations","value":{"autoscaling.knative.dev/minScale":"1"}},{"name":"gitops_repository_owner","value":"tanzu-end-to-end"},{"name":"gitops_server_address","value":"https://github.com/"},{"name":"gitops_repository_name","value":"trp-gitops-canary"}],"source":{"git":{"ref":{"branch":"main"},"url":"https://github.com/jeffellin/trp_bookstore_api_demo"}}}}
+        kapp.k14s.io/identity: v1;canary/carto.run/Workload/bookstore-api-demo;carto.run/v1alpha1
+        kapp.k14s.io/original: '{"apiVersion":"carto.run/v1alpha1","kind":"Workload","metadata":{"labels":{"app.kubernetes.io/part-of":"bookstore-api-demo","apps.tanzu.vmware.com/has-tests":"true","apps.tanzu.vmware.com/workload-type":"web","kapp.k14s.io/app":"1680803861227691168","kapp.k14s.io/association":"v1.3eaa25fbc60009f11706440283833994"},"name":"bookstore-api-demo","namespace":"canary"},"spec":{"build":{"env":[{"name":"BP_JVM_VERSION","value":"17"}]},"params":[{"name":"annotations","value":{"autoscaling.knative.dev/minScale":"1"}},{"name":"gitops_repository_name","value":"trp-gitops-canary"}],"source":{"git":{"ref":{"branch":"main"},"url":"https://github.com/jeffellin/trp_bookstore_api_demo"}}}}'
+        kapp.k14s.io/original-diff-md5: c6e94dc94aed3401b5d0f26ed6c0bff3
       labels:
         app.kubernetes.io/component: run
         app.kubernetes.io/part-of: bookstore-api-demo
@@ -40,6 +43,8 @@ spec:
         apps.tanzu.vmware.com/workload-type: web
         carto.run/workload-name: bookstore-api-demo
         conventions.carto.run/framework: spring-boot
+        kapp.k14s.io/app: "1680803861227691168"
+        kapp.k14s.io/association: v1.3eaa25fbc60009f11706440283833994
         tanzu.app.live.view: "true"
         tanzu.app.live.view.application.actuator.path: actuator
         tanzu.app.live.view.application.actuator.port: "8080"
@@ -50,7 +55,7 @@ spec:
       - env:
         - name: JAVA_TOOL_OPTIONS
           value: -Dmanagement.endpoint.health.probes.add-additional-paths="true" -Dmanagement.health.probes.enabled="true" -Dserver.port="8080" -Dserver.shutdown.grace-period="24s"
-        image: registry.gcp.ellin.net/tap/workloads/bookstore-api-demo-canary@sha256:75f81b61f08944472fd1f32cafd43f704cd7b0c0d61a673d0bddff58ea9f9e54
+        image: registry.gcp.ellin.net/tap/supply-chain/bookstore-api-demo-canary@sha256:8fae5fe52422cb41c79496b09a00b83683683dc19116bf5532db69e76c2e983e
         livenessProbe:
           httpGet:
             path: /livez
