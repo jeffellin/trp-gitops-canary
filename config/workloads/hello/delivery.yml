@@ -10,8 +10,6 @@ metadata:
     app.kubernetes.io/part-of: hello
     apps.tanzu.vmware.com/has-tests: "true"
     apps.tanzu.vmware.com/workload-type: web
-    kapp.k14s.io/app: "1680803861227691168"
-    kapp.k14s.io/association: v1.b3d06e51160e6afc80801b2e01732b7f
     app.kubernetes.io/component: run
     carto.run/workload-name: hello
 spec:
@@ -32,9 +30,8 @@ spec:
           spring-boot-convention/app-live-view-connector-boot
           spring-boot-convention/app-live-view-appflavours-boot
         developer.conventions/target-containers: workload
-        kapp.k14s.io/identity: v1;workloads/carto.run/Workload/hello;carto.run/v1alpha1
-        kapp.k14s.io/original: '{"apiVersion":"carto.run/v1alpha1","kind":"Workload","metadata":{"labels":{"app.kubernetes.io/part-of":"hello","apps.tanzu.vmware.com/has-tests":"true","apps.tanzu.vmware.com/workload-type":"web","kapp.k14s.io/app":"1680803861227691168","kapp.k14s.io/association":"v1.b3d06e51160e6afc80801b2e01732b7f"},"name":"hello","namespace":"workloads"},"spec":{"build":{"env":[{"name":"BP_JVM_VERSION","value":"17"}]},"params":[{"name":"annotations","value":{"autoscaling.knative.dev/minScale":"1"}},{"name":"gitops_repository_name","value":"trp-gitops-canary"}],"source":{"git":{"ref":{"branch":"main"},"url":"https://github.com/tanzu-end-to-end/trp-tanzu-java-web-app.git"}}}}'
-        kapp.k14s.io/original-diff-md5: c6e94dc94aed3401b5d0f26ed6c0bff3
+        kubectl.kubernetes.io/last-applied-configuration: |
+          {"apiVersion":"carto.run/v1alpha1","kind":"Workload","metadata":{"annotations":{},"labels":{"app.kubernetes.io/part-of":"hello","apps.tanzu.vmware.com/has-tests":"true","apps.tanzu.vmware.com/workload-type":"web"},"name":"hello","namespace":"workloads"},"spec":{"build":{"env":[{"name":"BP_JVM_VERSION","value":"17"}]},"params":[{"name":"annotations","value":{"autoscaling.knative.dev/minScale":"1"}},{"name":"gitops_repository_name","value":"trp-gitops-canary"}],"source":{"git":{"ref":{"branch":"main"},"url":"https://github.com/tanzu-end-to-end/trp-tanzu-java-web-app.git"}}}}
       labels:
         app.kubernetes.io/component: run
         app.kubernetes.io/part-of: hello
@@ -43,8 +40,6 @@ spec:
         apps.tanzu.vmware.com/workload-type: web
         carto.run/workload-name: hello
         conventions.carto.run/framework: spring-boot
-        kapp.k14s.io/app: "1680803861227691168"
-        kapp.k14s.io/association: v1.b3d06e51160e6afc80801b2e01732b7f
         tanzu.app.live.view: "true"
         tanzu.app.live.view.application.actuator.path: actuator
         tanzu.app.live.view.application.actuator.port: "8080"
@@ -55,7 +50,7 @@ spec:
       - env:
         - name: JAVA_TOOL_OPTIONS
           value: -Dmanagement.endpoint.health.probes.add-additional-paths="true" -Dmanagement.health.probes.enabled="true" -Dserver.port="8080" -Dserver.shutdown.grace-period="24s"
-        image: registry.gcp.ellin.net/tap/supply-chain/hello-workloads@sha256:a8f1019aea4e7da20e8098072ada43a0d763576e057228882524601d1a408bab
+        image: registry.gcp.ellin.net/tap/supply-chain/hello-workloads@sha256:cb7011af0ad68121a4b044fb4ff9bc3ab7996f5625e1d5ce1db09599521592ed
         livenessProbe:
           httpGet:
             path: /livez
