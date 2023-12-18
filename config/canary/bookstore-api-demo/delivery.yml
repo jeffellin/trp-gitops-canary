@@ -17,7 +17,7 @@ spec:
     metadata:
       annotations:
         autoscaling.knative.dev/minScale: "1"
-        boot.spring.io/version: 3.0.5
+        boot.spring.io/version: 3.2.0
         conventions.carto.run/applied-conventions: |-
           appliveview-sample/app-live-view-appflavour-check
           spring-boot-convention/auto-configure-actuators-check
@@ -50,7 +50,7 @@ spec:
       - env:
         - name: JAVA_TOOL_OPTIONS
           value: -Dmanagement.endpoint.health.probes.add-additional-paths="true" -Dmanagement.health.probes.enabled="true" -Dserver.port="8080" -Dserver.shutdown.grace-period="24s"
-        image: registry.gcp.ellin.net/tap/supply-chain/bookstore-api-demo-canary@sha256:3b665e3e595f15fd003bc210000bfcf6bca80b6ee630f1c524fe42523f22fff2
+        image: registry.gcp.ellin.net/tap/supply-chain/bookstore-api-demo-canary@sha256:e5222c3e6e3e8bc538161ef01712b4cba4ef8a84b0360ffc7ae4cc05c15faef3
         livenessProbe:
           httpGet:
             path: /livez
