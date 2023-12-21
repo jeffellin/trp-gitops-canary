@@ -50,7 +50,7 @@ spec:
       - env:
         - name: JAVA_TOOL_OPTIONS
           value: -Dmanagement.endpoint.health.probes.add-additional-paths="true" -Dmanagement.health.probes.enabled="true" -Dserver.port="8080" -Dserver.shutdown.grace-period="24s"
-        image: registry.gcp.ellin.net/tap/supply-chain/bookstore-api-demo-canary@sha256:59fb565a70ab395d02fbb1df1fe5c62780ecb923c868ad3a1ffa52691bb40aea
+        image: registry.gcp.ellin.net/tap/supply-chain/bookstore-api-demo-canary@sha256:6f05d6f1c33a9f106ae1ddd57525b6d8e3c98b6c5faae62432982ebaefb513cf
         livenessProbe:
           httpGet:
             path: /livez
